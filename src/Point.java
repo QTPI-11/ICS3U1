@@ -1,4 +1,4 @@
- public class Point {
+public class Point {
 
     private double x;
     private double y;
@@ -23,9 +23,7 @@
     }
 
     public double distance(Point point){
-        double adjacent = point.getX() - this.x;
-        double opposite = point.getY() - this.y;
-        return (Math.sqrt(Math.pow(adjacent, 2) + (Math.pow(opposite, 2))));
+        return (Math.sqrt(Math.pow(point.getX() - this.x, 2) + (Math.pow(point.getY() - this.y, 2))));
     }
 
     public double getX(){
@@ -37,8 +35,7 @@
     }
 
     public void linearEquation (Point point){
-        System.out.println("y = " + slope(point) + "x + " + yIntercept(point));
-
+        System.out.println("y = " + slope(point) + "x "+ ((yIntercept(point) >= 0) ? "+" : "") + yIntercept(point));
     }
 
     public Point midPoint (Point point){
@@ -56,4 +53,4 @@
     public double yIntercept(Point point){
         return (this.y - slope(point)*this.x);
     }
-}// unfinished
+}// Finished but needs polishing
