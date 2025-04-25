@@ -1,8 +1,8 @@
 public class PointObjectTester {
     public static void main(String[] args) {
         // Create two points
-        Point p1 = new Point(0, -5);
-        Point p2 = new Point(5, 5);
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(3, 4);
 
         // Test displayCoordinate()
         System.out.println("Testing displayCoordinate for p1:");
