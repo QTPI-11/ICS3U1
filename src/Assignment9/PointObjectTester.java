@@ -1,3 +1,4 @@
+package Assignment9;
 public class PointObjectTester {
     public static void main(String[] args) {
         // Create two points

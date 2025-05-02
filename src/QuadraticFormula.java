@@ -19,9 +19,8 @@ public class QuadraticFormula {
 
         System.out.println("The roots of the quadratic is "+ root1 + " and " + root2);
         keyboard.close();
-
-
-    }}
+    }
+}
 
 
     

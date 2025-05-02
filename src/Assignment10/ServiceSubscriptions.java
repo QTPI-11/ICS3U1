@@ -1,3 +1,4 @@
+package Assignment10;
 public enum ServiceSubscriptions {
     NETFLIX(15.99,1,false, false),
     HULU(20.49,2,false,true),

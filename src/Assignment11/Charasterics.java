@@ -3,29 +3,29 @@ package Assignment11;
 public class Charasterics extends Animal{
 
     protected String appearanceColor;
-    protected String size;
+    protected double height;
     protected String terrestrialOrAquatic;
     protected String animalGroup;
 
-    public Charasterics (String Animal, String size, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
+    public Charasterics (String Animal, double height, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
         super(Animal);
         this.appearanceColor = colorOfSkin;
-        this.size = size;
+        this.height = height;
         this.terrestrialOrAquatic = terrestrialOrAquatic;
         this.animalGroup = animalGroup;
     }
 
     public Charasterics(String Animal){
         super(Animal);
-        this.size = "moderate";
+        this.height = 1.8;
         this.appearanceColor = "white or black or brown";
         this.terrestrialOrAquatic = "terrestrial";
         this.animalGroup = "mammals";
     }
 
-    public void setCharasterics(String size, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
+    public void setCharasterics(double height, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
         this.appearanceColor = colorOfSkin;
-        this.size = size;
+        this.height = height;
         this.terrestrialOrAquatic = terrestrialOrAquatic;
         this.animalGroup = animalGroup;
     }
@@ -34,8 +34,8 @@ public class Charasterics extends Animal{
         return this.appearanceColor;
     }
 
-    public String getSize(){
-        return this.size;
+    public double getSize(){
+        return this.height;
     }
 
     public String getTerrestrialOrAquatic(){

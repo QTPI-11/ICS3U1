@@ -1,3 +1,4 @@
+package Assignment9;
 public class Point {
 
     private double x;
