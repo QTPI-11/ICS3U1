@@ -11,8 +11,8 @@ public class Classification extends Animal{
     protected String genus;
     protected String species;
 
-    public Classification (String Animal, String domain, String kingdom, String phylum, String clazz, String order, String family, String genus, String species){
-        super(Animal);
+    public Classification (String Animal, double population, int ageExpectancy, String domain, String kingdom, String phylum, String clazz, String order, String family, String genus, String species){
+        super(Animal, population, ageExpectancy);
         this.domain = domain;
         this.kingdom = kingdom;
         this.phylum = phylum;
@@ -86,4 +86,4 @@ public class Classification extends Animal{
     protected boolean isHuman(){
         return (this.species.equalsIgnoreCase("sapiens") && this.genus.equalsIgnoreCase("homo"));
     }
-} 
+} // maybe change the isHuman method for something that would be inherited from the parent class ex. inVariation :]
