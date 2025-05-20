@@ -1,4 +1,5 @@
 package Assignment9;
+
 public class Point {
 
     private double x;
@@ -24,7 +25,7 @@ public class Point {
     }
 
     public double distance(Point point) {
-        return (Math.sqrt(Math.pow(point.getX() - this.x, 2) + (Math.pow(point.getY() - this.y, 2))));
+        return Math.sqrt(Math.pow(point.getX() - this.x, 2) + (Math.pow(point.getY() - this.y, 2)));
     }
 
     public double getX() {
@@ -36,7 +37,7 @@ public class Point {
     }
 
     public void linearEquation(Point point) {
-        System.out.println("y = " + slope(point) + "x " + ((yIntercept(point) >= 0) ? "+" : "") + yIntercept(point));
+        System.out.println("y = " + slope(point) + "x " + (yIntercept(point) >= 0 ? "+" : "") + yIntercept(point));
     }
 
     public Point midPoint(Point point) {
@@ -44,7 +45,7 @@ public class Point {
     }
 
     public double slope(Point point) {
-        return ((point.getY() - this.y) / (point.getX() - this.x));
+        return (point.getY() - this.y) / (point.getX() - this.x);
     }
 
     public Point sum(Point point) {
@@ -52,6 +53,6 @@ public class Point {
     }
 
     public double yIntercept(Point point) {
-        return (this.y - slope(point) * this.x);
+        return this.y - slope(point) * this.x;
     }
 }

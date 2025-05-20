@@ -3,64 +3,68 @@ package Assignment11;
 public class Charasterics extends Animal{
 
     protected String appearanceColor;
-    protected String size;
+    protected double height;
     protected String terrestrialOrAquatic;
     protected String animalGroup;
 
-    public Charasterics (String Animal, double population, int ageExpectancy, String size, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
+    public Charasterics (String Animal, int population, int ageExpectancy, double centimeters, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
         super(Animal, population, ageExpectancy);
         this.appearanceColor = colorOfSkin;
-        this.size = size;
+        this.height = centimeters;
         this.terrestrialOrAquatic = terrestrialOrAquatic;
         this.animalGroup = animalGroup;
     }
 
-    public Charasterics(String Animal, double population, int ageExpectancy){
+    public Charasterics(String Animal, int population, int ageExpectancy){
         super(Animal, population, ageExpectancy);
-        this.size = "moderate";
+        this.height = 160;
         this.appearanceColor = "white or black or brown";
         this.terrestrialOrAquatic = "terrestrial";
         this.animalGroup = "mammals";
     }
 
-    protected void setCharasterics(String size, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
+    public void setCharasterics(double centimeters, String colorOfSkin, String terrestrialOrAquatic, String animalGroup){
         this.appearanceColor = colorOfSkin;
-        this.size = size;
+        this.height = centimeters;
         this.terrestrialOrAquatic = terrestrialOrAquatic;
         this.animalGroup = animalGroup;
     }
 
-    protected String getAppearanceColor(){
+    public String getAppearanceColor(){
         return this.appearanceColor;
     }
 
-    protected String getSize(){
-        return this.size;
+    public double getHeight(){
+        return this.height;
     }
 
-    protected String getTerrestrialOrAquatic(){
+    public String getTerrestrialOrAquatic(){
         return this.terrestrialOrAquatic;
     }
 
-    protected String getAnimalGroup(){
+    public String getAnimalGroup(){
         return this.animalGroup;
     }
 
-    protected boolean sameCharasterics(Charasterics animal, String trait){
+    public boolean sameCharasteric(Charasterics animal, String trait){
         switch (trait.toLowerCase()) {
             case "appearanceColor": return this.appearanceColor.equalsIgnoreCase(animal.appearanceColor);
-            case "size": return this.size.equalsIgnoreCase(animal.size);
+            case "size": return this.height == animal.height;
             case "terrestrialOrAquatic": return this.terrestrialOrAquatic.equalsIgnoreCase(animal.terrestrialOrAquatic);
             case "animalGroup": return this.animalGroup.equalsIgnoreCase(animal.animalGroup);
             default: return false; 
         }
     }
 
-    protected void comparePopulations (Charasterics animal){
-        System.out.println(((this.population > animal.population) ? this : animal) + " has the bigger population.");
+    public String describeAnimal() {
+        return String.format("The %s is a %s meter tall %s animal in the %s group.", this.getName(), this.height/100, this.terrestrialOrAquatic, this.animalGroup);
     }
 
-    protected void compareAgeExpectancy (Charasterics animal){
-        System.out.println(((this.ageExpectancy > animal.ageExpectancy) ? this : animal) + " has longer life expectancies.");
+    public boolean isAlbino(Charasterics animal) {
+        if (animal.appearanceColor.equalsIgnoreCase("white") && !this.appearanceColor.equalsIgnoreCase("white")){
+            return this.isVariation(animal);
+        } else {
+            return false;
+        }
     }
-} // need two more methods maybe use the methods inherited from the parent class ex. population and age which i think need to be fixed
+} 

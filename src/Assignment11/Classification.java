@@ -11,7 +11,7 @@ public class Classification extends Animal{
     protected String genus;
     protected String species;
 
-    public Classification (String Animal, double population, int ageExpectancy, String domain, String kingdom, String phylum, String clazz, String order, String family, String genus, String species){
+    public Classification (String Animal, int population, int ageExpectancy, String domain, String kingdom, String phylum, String clazz, String order, String family, String genus, String species){
         super(Animal, population, ageExpectancy);
         this.domain = domain;
         this.kingdom = kingdom;
@@ -23,39 +23,39 @@ public class Classification extends Animal{
         this.species = species;
     }
 
-    protected String getDomain(){
+    public String getDomain(){
         return this.domain;
     }
 
-    protected String getKingdom(){
+    public String getKingdom(){
         return this.kingdom;
     }
 
-    protected String getPhylum(){
+    public String getPhylum(){
         return this.phylum;
     }
 
-    protected String getClazz(){
+    public String getClazz(){
         return this.clazz;
     }
 
-    protected String getOrder(){
+    public String getOrder(){
         return this.order;
     }
 
-    protected String getFamily(){
+    public String getFamily(){
         return this.family;
     }
 
-    protected String getGenus(){
+    public String getGenus(){
         return this.genus;
     }
 
-    protected String getSpecies(){
+    public String getSpecies(){
         return this.species;
     }
 
-    protected void setClassification(String domain, String kingdom, String phylum, String clazz, String order, String family, String genus, String species){
+    public void setClassification(String domain, String kingdom, String phylum, String clazz, String order, String family, String genus, String species){
         this.domain = domain;
         this.kingdom = kingdom;
         this.phylum = phylum;
@@ -66,7 +66,7 @@ public class Classification extends Animal{
         this.species = species;
     }
 
-    protected boolean sameRank(Classification other, String rank) {
+    public boolean sameRank(Classification other, String rank) {
         switch (rank.toLowerCase()) {
             case "domain": return this.domain.equalsIgnoreCase(other.domain);
             case "kingdom": return this.kingdom.equalsIgnoreCase(other.kingdom);
@@ -79,11 +79,11 @@ public class Classification extends Animal{
             default: return false;
         }
     }
-    protected String giveScientificName (Classification animal){
-        return animal.getGenus() + " " + animal.getSpecies();
+    public String giveScientificName() {
+        return String.format("this scientific name for %s is %s %s",this.getName(),this.getGenus(),this.getSpecies());
     }
 
-    protected boolean isHuman(){
-        return (this.species.equalsIgnoreCase("sapiens") && this.genus.equalsIgnoreCase("homo"));
+    public String listFullClassification() {
+        return String.format("Name: %s, Domain: %s, Kingdom: %s, Phylum: %s, Class: %s, Order: %s, Family: %s, Genus: %s, Species: %s", this.getName(), this.domain, this.kingdom, this.phylum, this.clazz, this.order, this.family, this.genus, this.species);
     }
-} // maybe change the isHuman method for something that would be inherited from the parent class ex. inVariation :]
+}

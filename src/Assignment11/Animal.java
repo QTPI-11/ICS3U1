@@ -3,14 +3,16 @@ package Assignment11;
 public class Animal {
 
     protected String animal;
-    protected double population;
+    protected int population;
     protected int ageExpectancy;
 
-    public Animal(String name, double population, int ageExpectancy) {
+    public Animal(String name, int population, int ageExpectancy) {
         this.animal = name;
+        this.population = population;
+        this.ageExpectancy = ageExpectancy;
     }
 
-    protected void setAnimal(String name, double population, int ageExpectancy) {
+    protected void setAnimal(String name, int population, int ageExpectancy) {
         this.animal = name;
         this.population = population;
         this.ageExpectancy = ageExpectancy;
@@ -20,7 +22,7 @@ public class Animal {
         return this.animal;
     }
 
-    protected double getPopulation (){
+    protected int getPopulation (){
         return this.population;
     }
 
@@ -28,7 +30,15 @@ public class Animal {
         return this.ageExpectancy;
     }
 
+    protected int populationDifference(Animal animal){
+        return this.population - animal.population;
+    }
+
     protected boolean isVariation(Animal animal){
         return this.animal.equalsIgnoreCase(animal.getName());
+    }
+
+    protected boolean similarAgeExpectancy(Animal animal){
+        return this.ageExpectancy - animal.ageExpectancy <= 5;
     }
 }

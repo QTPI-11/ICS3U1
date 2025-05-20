@@ -1,5 +1,6 @@
 package Assignment10;
 public enum ServiceSubscriptions {
+
     NETFLIX(15.99,1,false, false),
     HULU(20.49,2,false,true),
     DISNEY_PLUS(10.49, 1,true,false),
@@ -24,12 +25,20 @@ public enum ServiceSubscriptions {
         this.hasPromocode = hasPromoCode;
     }
 
-    public double showCost (){
+    public double getCost(){
         return this.cost;
     }
 
-    public int showSubscriptionLength(){
+    public int getSubscriptionLength(){
         return this.months;
+    }
+
+    public boolean getGiveAsGift(){
+        return this.giveAsGift;
+    }
+
+    public boolean getHasPromoCode(){
+        return this.hasPromocode;
     }
 
     public double annualCost(){
@@ -39,11 +48,11 @@ public enum ServiceSubscriptions {
     public double costPerDay(){
         return this.cost/(30*this.months);
     }
-    public double buyWithCode(){
-        return (this.hasPromocode == true) ? this.cost*0.8 :  this.cost;
+    public double cheapestCost(){
+        return this.hasPromocode ? this.cost*0.8 : this.cost;
     }
 
     public void buyAsGift(){ 
-        System.out.println(this + ((this.giveAsGift == true) ? " can ": " can't ") + "be bought to gift someone.");
+        System.out.println(this + (this.giveAsGift ? " can ": " can't ") + "be bought to gift someone.");
     }
 }
